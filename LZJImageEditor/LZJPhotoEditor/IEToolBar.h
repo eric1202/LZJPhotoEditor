@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface IEToolBar : UIView
 
+- (IEToolBar *)initWithOptions:(NSArray *)array;
+
 @end
 
 NS_ASSUME_NONNULL_END

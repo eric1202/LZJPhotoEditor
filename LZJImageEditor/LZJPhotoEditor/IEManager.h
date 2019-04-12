@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface IEManager : NSObject
-
+@property (nonatomic, copy) NSArray *options;
 @end
 
 NS_ASSUME_NONNULL_END

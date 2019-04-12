@@ -16,6 +16,10 @@
 		B0F525502260947700C7619B /* IEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F5254F2260947700C7619B /* IEViewController.m */; };
 		B0F525532260949000C7619B /* IEToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F525522260949000C7619B /* IEToolBar.m */; };
 		B0F52556226094B000C7619B /* IEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F52555226094B000C7619B /* IEManager.m */; };
+		B0F5255C22609B9A00C7619B /* ma.png in Resources */ = {isa = PBXBuildFile; fileRef = B0F5255822609B9A00C7619B /* ma.png */; };
+		B0F5255D22609B9A00C7619B /* img.png in Resources */ = {isa = PBXBuildFile; fileRef = B0F5255922609B9A00C7619B /* img.png */; };
+		B0F5255E22609B9A00C7619B /* clip.png in Resources */ = {isa = PBXBuildFile; fileRef = B0F5255A22609B9A00C7619B /* clip.png */; };
+		B0F5255F22609B9A00C7619B /* text.png in Resources */ = {isa = PBXBuildFile; fileRef = B0F5255B22609B9A00C7619B /* text.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +39,10 @@
 		B0F525522260949000C7619B /* IEToolBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEToolBar.m; sourceTree = "<group>"; };
 		B0F52554226094B000C7619B /* IEManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IEManager.h; sourceTree = "<group>"; };
 		B0F52555226094B000C7619B /* IEManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEManager.m; sourceTree = "<group>"; };
+		B0F5255822609B9A00C7619B /* ma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ma.png; sourceTree = "<group>"; };
+		B0F5255922609B9A00C7619B /* img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img.png; sourceTree = "<group>"; };
+		B0F5255A22609B9A00C7619B /* clip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clip.png; sourceTree = "<group>"; };
+		B0F5255B22609B9A00C7619B /* text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +80,7 @@
 				B0F525382260926C00C7619B /* AppDelegate.m */,
 				B0F5253A2260926C00C7619B /* ViewController.h */,
 				B0F5253B2260926C00C7619B /* ViewController.m */,
+				B0F5255722609B9A00C7619B /* Resources */,
 				B0F5253D2260926C00C7619B /* Main.storyboard */,
 				B0F525402260926D00C7619B /* Assets.xcassets */,
 				B0F525422260926D00C7619B /* LaunchScreen.storyboard */,
@@ -92,6 +101,17 @@
 				B0F52555226094B000C7619B /* IEManager.m */,
 			);
 			path = LZJPhotoEditor;
+			sourceTree = "<group>";
+		};
+		B0F5255722609B9A00C7619B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B0F5255822609B9A00C7619B /* ma.png */,
+				B0F5255922609B9A00C7619B /* img.png */,
+				B0F5255A22609B9A00C7619B /* clip.png */,
+				B0F5255B22609B9A00C7619B /* text.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,9 +171,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0F5255D22609B9A00C7619B /* img.png in Resources */,
 				B0F525442260926D00C7619B /* LaunchScreen.storyboard in Resources */,
 				B0F525412260926D00C7619B /* Assets.xcassets in Resources */,
 				B0F5253F2260926C00C7619B /* Main.storyboard in Resources */,
+				B0F5255F22609B9A00C7619B /* text.png in Resources */,
+				B0F5255C22609B9A00C7619B /* ma.png in Resources */,
+				B0F5255E22609B9A00C7619B /* clip.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

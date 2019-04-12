@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "IEViewController.h"
 @interface ViewController ()<UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *btn;
@@ -40,7 +40,9 @@
     NSLog(@"%@",info);
     
     [picker dismissViewControllerAnimated:YES completion:^{
-        
+        IEViewController *vc = [[IEViewController alloc]init];
+        vc.image = info[@"UIImagePickerControllerOriginalImage"];
+        [self.navigationController pushViewController:vc animated:YES];
     }];
 }
 
