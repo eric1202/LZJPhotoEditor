@@ -1,0 +1,368 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B0F525392260926C00C7619B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F525382260926C00C7619B /* AppDelegate.m */; };
+		B0F5253C2260926C00C7619B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F5253B2260926C00C7619B /* ViewController.m */; };
+		B0F5253F2260926C00C7619B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0F5253D2260926C00C7619B /* Main.storyboard */; };
+		B0F525412260926D00C7619B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0F525402260926D00C7619B /* Assets.xcassets */; };
+		B0F525442260926D00C7619B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0F525422260926D00C7619B /* LaunchScreen.storyboard */; };
+		B0F525472260926E00C7619B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F525462260926E00C7619B /* main.m */; };
+		B0F525502260947700C7619B /* IEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F5254F2260947700C7619B /* IEViewController.m */; };
+		B0F525532260949000C7619B /* IEToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F525522260949000C7619B /* IEToolBar.m */; };
+		B0F52556226094B000C7619B /* IEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F52555226094B000C7619B /* IEManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B0F525342260926C00C7619B /* LZJImageEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZJImageEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0F525372260926C00C7619B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B0F525382260926C00C7619B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B0F5253A2260926C00C7619B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B0F5253B2260926C00C7619B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B0F5253E2260926C00C7619B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B0F525402260926D00C7619B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B0F525432260926D00C7619B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B0F525452260926E00C7619B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0F525462260926E00C7619B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B0F5254E2260947700C7619B /* IEViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IEViewController.h; sourceTree = "<group>"; };
+		B0F5254F2260947700C7619B /* IEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEViewController.m; sourceTree = "<group>"; };
+		B0F525512260949000C7619B /* IEToolBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IEToolBar.h; sourceTree = "<group>"; };
+		B0F525522260949000C7619B /* IEToolBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEToolBar.m; sourceTree = "<group>"; };
+		B0F52554226094B000C7619B /* IEManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IEManager.h; sourceTree = "<group>"; };
+		B0F52555226094B000C7619B /* IEManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B0F525312260926C00C7619B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B0F5252B2260926C00C7619B = {
+			isa = PBXGroup;
+			children = (
+				B0F525362260926C00C7619B /* LZJImageEditor */,
+				B0F525352260926C00C7619B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B0F525352260926C00C7619B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B0F525342260926C00C7619B /* LZJImageEditor.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B0F525362260926C00C7619B /* LZJImageEditor */ = {
+			isa = PBXGroup;
+			children = (
+				B0F5254D2260945700C7619B /* LZJPhotoEditor */,
+				B0F525372260926C00C7619B /* AppDelegate.h */,
+				B0F525382260926C00C7619B /* AppDelegate.m */,
+				B0F5253A2260926C00C7619B /* ViewController.h */,
+				B0F5253B2260926C00C7619B /* ViewController.m */,
+				B0F5253D2260926C00C7619B /* Main.storyboard */,
+				B0F525402260926D00C7619B /* Assets.xcassets */,
+				B0F525422260926D00C7619B /* LaunchScreen.storyboard */,
+				B0F525452260926E00C7619B /* Info.plist */,
+				B0F525462260926E00C7619B /* main.m */,
+			);
+			path = LZJImageEditor;
+			sourceTree = "<group>";
+		};
+		B0F5254D2260945700C7619B /* LZJPhotoEditor */ = {
+			isa = PBXGroup;
+			children = (
+				B0F5254E2260947700C7619B /* IEViewController.h */,
+				B0F5254F2260947700C7619B /* IEViewController.m */,
+				B0F525512260949000C7619B /* IEToolBar.h */,
+				B0F525522260949000C7619B /* IEToolBar.m */,
+				B0F52554226094B000C7619B /* IEManager.h */,
+				B0F52555226094B000C7619B /* IEManager.m */,
+			);
+			path = LZJPhotoEditor;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B0F525332260926C00C7619B /* LZJImageEditor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0F5254A2260926E00C7619B /* Build configuration list for PBXNativeTarget "LZJImageEditor" */;
+			buildPhases = (
+				B0F525302260926C00C7619B /* Sources */,
+				B0F525312260926C00C7619B /* Frameworks */,
+				B0F525322260926C00C7619B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LZJImageEditor;
+			productName = LZJImageEditor;
+			productReference = B0F525342260926C00C7619B /* LZJImageEditor.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B0F5252C2260926C00C7619B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = weima;
+				TargetAttributes = {
+					B0F525332260926C00C7619B = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = B0F5252F2260926C00C7619B /* Build configuration list for PBXProject "LZJImageEditor" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B0F5252B2260926C00C7619B;
+			productRefGroup = B0F525352260926C00C7619B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B0F525332260926C00C7619B /* LZJImageEditor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B0F525322260926C00C7619B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0F525442260926D00C7619B /* LaunchScreen.storyboard in Resources */,
+				B0F525412260926D00C7619B /* Assets.xcassets in Resources */,
+				B0F5253F2260926C00C7619B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B0F525302260926C00C7619B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0F525532260949000C7619B /* IEToolBar.m in Sources */,
+				B0F52556226094B000C7619B /* IEManager.m in Sources */,
+				B0F5253C2260926C00C7619B /* ViewController.m in Sources */,
+				B0F525472260926E00C7619B /* main.m in Sources */,
+				B0F525502260947700C7619B /* IEViewController.m in Sources */,
+				B0F525392260926C00C7619B /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B0F5253D2260926C00C7619B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0F5253E2260926C00C7619B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B0F525422260926D00C7619B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0F525432260926D00C7619B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B0F525482260926E00C7619B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B0F525492260926E00C7619B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B0F5254B2260926E00C7619B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8GTQ22BPX6;
+				INFOPLIST_FILE = LZJImageEditor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = party.lzj.image.edit.LZJImageEditor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B0F5254C2260926E00C7619B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8GTQ22BPX6;
+				INFOPLIST_FILE = LZJImageEditor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = party.lzj.image.edit.LZJImageEditor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B0F5252F2260926C00C7619B /* Build configuration list for PBXProject "LZJImageEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0F525482260926E00C7619B /* Debug */,
+				B0F525492260926E00C7619B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0F5254A2260926E00C7619B /* Build configuration list for PBXNativeTarget "LZJImageEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0F5254B2260926E00C7619B /* Debug */,
+				B0F5254C2260926E00C7619B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B0F5252C2260926C00C7619B /* Project object */;
+}
