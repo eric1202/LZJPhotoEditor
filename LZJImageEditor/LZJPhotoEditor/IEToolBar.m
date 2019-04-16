@@ -30,10 +30,42 @@
 - (void)addBtns{
     CGFloat width = self.frame.size.width/self.options.count;
     [self.options enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        UIViewController *vc = [IEHelper findViewController];
+
         UIView *view = [self viewWithTitle:obj[@"title"] ImageOrUrl:obj[@"image"] Click:^{
             NSLog(@"%@",obj[@"title"]);
-            if (idx == 3) {
-                UIViewController *vc = [IEHelper findViewController];
+            if(idx == 0){
+                IEConfig *config = [[IEConfig alloc]init];
+                config.title = @"贴图";
+                config.datas = @[@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma"];
+                
+                IEPinView *view = [[IEPinView alloc]initWithConfig:config];
+                view.delegate = vc;
+                [vc.view addSubview:view];
+                
+                
+                [view mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.left.bottom.right.mas_equalTo(0);
+                    make.height.mas_equalTo(CGRectGetHeight(vc.view.frame)*0.38);
+
+                }];
+//                [vc.view layoutIfNeeded];
+//
+//                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                    [UIView animateWithDuration:0.33 animations:^{
+//                        [view mas_updateConstraints:^(MASConstraintMaker *make) {
+//                            make.height.mas_equalTo(CGRectGetHeight(vc.view.frame)*0.38);
+//                        }];
+//                        
+//                        [vc.view layoutIfNeeded];
+//                    }];
+//                });
+                
+
+                self.hidden = YES;
+                
+            }
+            else if (idx == 3) {
                 IETextActionView *view = [[IETextActionView alloc]initWithFrame:vc.view.bounds];
                 view.delegate = vc;
                 [vc.view addSubview:view];

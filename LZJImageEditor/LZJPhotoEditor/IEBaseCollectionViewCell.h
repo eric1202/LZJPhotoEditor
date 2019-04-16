@@ -1,5 +1,5 @@
 //
-//  IEBaseCCollectionViewCell.h
+//  IEBaseCollectionViewCell.h
 //  LZJImageEditor
 //
 //  Created by weima on 2019/4/15.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface IEBaseCCollectionViewCell : UICollectionViewCell
+@interface IEBaseCollectionViewCell : UICollectionViewCell
 @property (nonatomic, strong) UILabel *lbl;
 @property (nonatomic, strong) UIImageView *iv;
 @end

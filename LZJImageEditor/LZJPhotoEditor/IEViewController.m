@@ -12,7 +12,10 @@
 #import "IEImageView.h"
 #import "IETextStickerView.h"
 #import "IETextActionView.h"
-@interface IEViewController ()<IeTextActionDelegate>
+#import "IEPinView.h"
+#import "IEHelper.h"
+#import "IEPinStickerView.h"
+@interface IEViewController ()<IeTextActionDelegate, IEActionSheetViewDelegate>
 @property (nonatomic, strong) IEImageView *originImageView;
 @property (nonatomic, strong) IEImageView *resultImageView;
 @property (nonatomic, strong) IEToolBar *toolBar;
@@ -40,6 +43,21 @@
 }
 
 #pragma mark - Delegate
+
+- (void)didSelectAtIndex:(NSInteger)index ActionView:(IEActionSheetView *)view Image:(UIImage *)image{
+    IEPinStickerView *stickerImageView = [[IEPinStickerView alloc]init];
+    
+    stickerImageView.delegate = self;
+    stickerImageView.tag = self.stickerTag ++;
+    stickerImageView.frame = CGRectMake(0, 0, 128, 128);
+    stickerImageView.center = self.resultImageView.center;
+    stickerImageView.contentImageView.image = image;
+    [self.resultImageView addSubview:stickerImageView];
+    
+    [self.stickerViewArray insertObject:stickerImageView atIndex:0];
+
+}
+
 - (void)ieTextActionCloseBtnClicked{
     self.toolBar.hidden = NO;
 
@@ -62,18 +80,18 @@
         rect2.size.width = 340;
     }
     
-    IETextStickerView *stickeLabelView = [[IETextStickerView alloc] initWithLabelHeight:CGSizeMake(rect2.size.width, rect1.size.height)];
-    stickeLabelView.delegate = self;
-    stickeLabelView.tag = self.stickerTag++;
-    stickeLabelView.frame = CGRectMake(0, 0, rect2.size.width + 44, rect1.size.height + 34);
-    stickeLabelView.center = CGPointMake(self.view.frame.size.width/2, 180);
-    stickeLabelView.contentLabel.text = text;
-    stickeLabelView.contentLabel.font = font;
-    stickeLabelView.contentLabel.textColor = color;
+    IETextStickerView *textStickerView = [[IETextStickerView alloc] initWithLabelHeight:CGSizeMake(rect2.size.width, rect1.size.height)];
+    textStickerView.delegate = self;
+    textStickerView.tag = self.stickerTag++;
+    textStickerView.frame = CGRectMake(0, 0, rect2.size.width + 44, rect1.size.height + 34);
+    textStickerView.center = CGPointMake(self.view.frame.size.width/2, 180);
+    textStickerView.contentLabel.text = text;
+    textStickerView.contentLabel.font = font;
+    textStickerView.contentLabel.textColor = color;
     
-    [self.resultImageView addSubview:stickeLabelView];
+    [self.resultImageView addSubview:textStickerView];
     
-    [self.stickerViewArray insertObject:stickeLabelView atIndex:0];
+    [self.stickerViewArray insertObject:textStickerView atIndex:0];
 }
 #pragma mark - Custom Methods
 
@@ -83,6 +101,17 @@
         _resultImageView = [[IEImageView alloc]initWithFrame:self.view.bounds];
         _resultImageView.contentMode = UIViewContentModeScaleAspectFit;
         _resultImageView.backgroundColor = UIColor.blackColor;
+        
+        __weak IEViewController *weakSelf = self;
+        [_resultImageView addGestureRecognizer:[UITapGestureRecognizer nvm_gestureRecognizerWithActionBlock:^{
+            for (UIView *v in weakSelf.view.subviews) {
+                if ([v isKindOfClass:IEPinView.class] || [v isKindOfClass:IETextActionView.class]) {
+                    [v removeFromSuperview];
+                }
+                
+            }
+            weakSelf.toolBar.hidden = !weakSelf.toolBar.hidden;
+        }]];
     }
     
     return _resultImageView;

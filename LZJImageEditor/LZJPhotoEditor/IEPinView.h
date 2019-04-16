@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface IEPinView : IEActionSheetView
 @property (nonatomic, strong) NSMutableArray *mapImageArr; // 贴图数据
 
+- (void)show;
 
 @end
 

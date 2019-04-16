@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class IEActionSheetView;
 @interface IEConfig : NSObject
+
+@property (nonatomic, copy) NSArray *datas;
+
 
 /**
  圆角
@@ -36,7 +40,7 @@
 
 @protocol IEActionSheetViewDelegate <NSObject>
 
-- (void)didSelectAtIndex:(NSInteger)index;
+- (void)didSelectAtIndex:(NSInteger)index ActionView:(IEActionSheetView *)view Image:(UIImage *)image;
 
 @end
 
@@ -45,7 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface IEActionSheetView : UIView
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) UIView *headerView;
-@property (nonatomic, copy) id<IEActionSheetViewDelegate> delegate;
+@property (nonatomic, weak) id<IEActionSheetViewDelegate> delegate;
 @property (nonatomic, strong) UIColor *backgroundColor;
 
 @property (nonatomic, copy) NSArray *selectedDatas;

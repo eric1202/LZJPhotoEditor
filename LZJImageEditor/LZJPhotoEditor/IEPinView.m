@@ -10,15 +10,10 @@
 #import "IEHelper.h"
 
 @interface IEPinView ()
-
+//@property (nonatomic, strong) UICollectionView *collectionView;
+//@property (nonatomic, strong) UICollectionView *topView;
 @end
 
 @implementation IEPinView
-
--(IEPinView *)init{
-    self = [super init];
-    
-    return self;
-}
 
 @end

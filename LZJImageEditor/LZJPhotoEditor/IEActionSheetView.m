@@ -7,9 +7,16 @@
 //
 
 #import "IEActionSheetView.h"
+#import "IEHelper.h"
 #import <Masonry.h>
-#import "IEBaseCCollectionViewCell.h"
-@interface IEActionSheetView ()<UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate>
+#import "IEBaseCollectionViewCell.h"
+
+@implementation IEConfig
+
+@end
+
+
+@interface IEActionSheetView ()<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic,strong) UIPanGestureRecognizer *panGR;
 @property (nonatomic,assign) CGFloat oldY;
 @property (nonatomic,strong) UILabel *titleLabel;
@@ -23,26 +30,31 @@
 - (instancetype)initWithConfig:(IEConfig *)config{
     self = [super init];
     if(self){
-        //设置圆角
+        UIView *v = [IEHelper findViewController].view;
+        self.frame = CGRectMake(0, CGRectGetHeight(v.frame)*0.61, CGRectGetWidth(v.frame),CGRectGetHeight(v.frame));
+        config.circular = 8;
         self.config = config;
+        //设置圆角
         UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:CGSizeMake(config.circular, config.circular)];
         CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
         maskLayer.frame = self.bounds;
         maskLayer.path = maskPath.CGPath;
-        self.layer.mask = maskLayer;
-        
-        [self addSubview:self.collectionView];
+        self.titleLabel.layer.mask = maskLayer;
         [self addSubview:self.titleLabel];
         
+        [self addSubview:self.collectionView];
+        self.datas = self.config.datas;
+        self.titleLabel.text = self.config.title;
+        
         //拖拽手势
-        _panGR = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGRAct:)];
-        _panGR.delegate = self;
-        [self.collectionView addGestureRecognizer:_panGR];
+//        _panGR = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGRAct:)];
+//        _panGR.delegate = self;
+//        [self.collectionView addGestureRecognizer:_panGR];
         
         //layout
         [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.bottom.mas_equalTo(0);
-            make.top.mas_equalTo(self.titleLabel.mas_bottom).offset(10);
+            make.top.mas_equalTo(self.titleLabel.mas_bottom).offset(0);
         }];
         [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.mas_equalTo(0);
@@ -55,11 +67,17 @@
 -(UICollectionView *)collectionView{
     if(!_collectionView){
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
+        CGFloat wd = CGRectGetWidth(self.frame)/4-3;
         
+        layout.minimumInteritemSpacing = 1;
+        
+        layout.itemSize = CGSizeMake(wd, wd);
         _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, 0, 0) collectionViewLayout:layout];
-        _collectionView.delegate = self;
         
-        [_collectionView registerClass:[IEBaseCCollectionViewCell class] forCellWithReuseIdentifier:@"IEBaseCCollectionViewCell"];
+        _collectionView.delegate = self;
+        _collectionView.dataSource = self;
+        _collectionView.backgroundColor = UIColor.whiteColor;
+        [_collectionView registerClass:[IEBaseCollectionViewCell class] forCellWithReuseIdentifier:@"IEBaseCCollectionViewCell"];
     }
     
     return _collectionView;
@@ -71,7 +89,8 @@
         
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.text = @"操作";
-        _titleLabel.textColor = [UIColor whiteColor];
+        _titleLabel.textColor = [UIColor grayColor];
+        _titleLabel.backgroundColor = UIColor.whiteColor;
         _titleLabel.font =[UIFont systemFontOfSize:14];
     }
     
@@ -98,6 +117,7 @@
             rect.origin.y = self.config.offsetY;
         }
         self.frame=rect;
+        
         [pan setTranslation:CGPointZero inView:self.collectionView];
         
     }
@@ -128,8 +148,9 @@
 #pragma mark - delegate
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    IEBaseCCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"IEBaseCCollectionViewCell" forIndexPath:indexPath];
+    IEBaseCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"IEBaseCCollectionViewCell" forIndexPath:indexPath];
     [cell.lbl setText:[NSString stringWithFormat:@"%@",indexPath]];
+    cell.iv.image = [UIImage imageNamed:_datas[indexPath.item]];
     return cell;
 }
 
@@ -137,5 +158,14 @@
     return _datas.count;
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (_delegate) {
+        [_delegate didSelectAtIndex:indexPath.item ActionView:self Image:[UIImage imageNamed:_datas[indexPath.item]]];
+    }
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+}
 
 @end

@@ -26,7 +26,7 @@
 		B0FAAB9C226431EC00C9D7C9 /* IEStack.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAAB9B226431EC00C9D7C9 /* IEStack.m */; };
 		B0FAAB9F2264606D00C9D7C9 /* IEPinView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAAB9E2264606D00C9D7C9 /* IEPinView.m */; };
 		B0FAABA22264612800C9D7C9 /* IEActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAABA12264612800C9D7C9 /* IEActionSheetView.m */; };
-		B0FAABA52264741300C9D7C9 /* IEBaseCCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAABA42264741300C9D7C9 /* IEBaseCCollectionViewCell.m */; };
+		B0FAABA52264741300C9D7C9 /* IEBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAABA42264741300C9D7C9 /* IEBaseCollectionViewCell.m */; };
 		B0FAABA922648D3200C9D7C9 /* IEMasaicView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAABA822648D3200C9D7C9 /* IEMasaicView.m */; };
 		B0FAABAC22657A3C00C9D7C9 /* IEPinStickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAABAB22657A3C00C9D7C9 /* IEPinStickerView.m */; };
 		B0FAABAF22657A7300C9D7C9 /* IEStickerBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAABAD22657A7300C9D7C9 /* IEStickerBaseView.m */; };
@@ -67,8 +67,8 @@
 		B0FAAB9E2264606D00C9D7C9 /* IEPinView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEPinView.m; sourceTree = "<group>"; };
 		B0FAABA02264612800C9D7C9 /* IEActionSheetView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IEActionSheetView.h; sourceTree = "<group>"; };
 		B0FAABA12264612800C9D7C9 /* IEActionSheetView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEActionSheetView.m; sourceTree = "<group>"; };
-		B0FAABA32264741300C9D7C9 /* IEBaseCCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IEBaseCCollectionViewCell.h; sourceTree = "<group>"; };
-		B0FAABA42264741300C9D7C9 /* IEBaseCCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEBaseCCollectionViewCell.m; sourceTree = "<group>"; };
+		B0FAABA32264741300C9D7C9 /* IEBaseCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IEBaseCollectionViewCell.h; sourceTree = "<group>"; };
+		B0FAABA42264741300C9D7C9 /* IEBaseCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEBaseCollectionViewCell.m; sourceTree = "<group>"; };
 		B0FAABA722648D3200C9D7C9 /* IEMasaicView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IEMasaicView.h; sourceTree = "<group>"; };
 		B0FAABA822648D3200C9D7C9 /* IEMasaicView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEMasaicView.m; sourceTree = "<group>"; };
 		B0FAABAA22657A3C00C9D7C9 /* IEPinStickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEPinStickerView.h; sourceTree = "<group>"; };
@@ -157,8 +157,8 @@
 				B0FAAB9E2264606D00C9D7C9 /* IEPinView.m */,
 				B0FAABA02264612800C9D7C9 /* IEActionSheetView.h */,
 				B0FAABA12264612800C9D7C9 /* IEActionSheetView.m */,
-				B0FAABA32264741300C9D7C9 /* IEBaseCCollectionViewCell.h */,
-				B0FAABA42264741300C9D7C9 /* IEBaseCCollectionViewCell.m */,
+				B0FAABA32264741300C9D7C9 /* IEBaseCollectionViewCell.h */,
+				B0FAABA42264741300C9D7C9 /* IEBaseCollectionViewCell.m */,
 				B0FAABA722648D3200C9D7C9 /* IEMasaicView.h */,
 				B0FAABA822648D3200C9D7C9 /* IEMasaicView.m */,
 				B0FAABAE22657A7300C9D7C9 /* IEStickerBaseView.h */,
@@ -293,7 +293,7 @@
 				B0FAABB222657CE600C9D7C9 /* IETextStickerView.m in Sources */,
 				B0F525532260949000C7619B /* IEToolBar.m in Sources */,
 				B0FAABAF22657A7300C9D7C9 /* IEStickerBaseView.m in Sources */,
-				B0FAABA52264741300C9D7C9 /* IEBaseCCollectionViewCell.m in Sources */,
+				B0FAABA52264741300C9D7C9 /* IEBaseCollectionViewCell.m in Sources */,
 				B0F52556226094B000C7619B /* IEManager.m in Sources */,
 				B0F5256222640FD000C7619B /* IEHelper.m in Sources */,
 				B0F5253C2260926C00C7619B /* ViewController.m in Sources */,
