@@ -6,11 +6,13 @@
 //  Copyright © 2019年 weima. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "IEActionSheetView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface IEPinView : UIView
+@interface IEPinView : IEActionSheetView
+@property (nonatomic, strong) NSMutableArray *mapImageArr; // 贴图数据
+
 
 @end
 

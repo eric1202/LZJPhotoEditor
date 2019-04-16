@@ -7,6 +7,9 @@
 //
 
 #import "IEToolBar.h"
+#import "IEHelper.h"
+#import "IEPinView.h"
+#import "IETextActionView.h"
 
 @interface IEToolBar()
 @property (nonatomic, copy) NSArray *options;
@@ -15,8 +18,8 @@
 @implementation IEToolBar
 
 - (IEToolBar *)initWithOptions:(NSArray *)array{
-    self = [super initWithFrame:CGRectMake(0, 0, 375, 100)];
-    
+    self = [super initWithFrame:CGRectMake(0, 0, [IEHelper findViewController].view.frame.size.width, 100)];
+    self.backgroundColor = UIColor.whiteColor;
     self.options = array;
     
     [self addBtns];
@@ -25,9 +28,18 @@
 }
 
 - (void)addBtns{
-    CGFloat width = 375.0/self.options.count;
+    CGFloat width = self.frame.size.width/self.options.count;
     [self.options enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
         UIView *view = [self viewWithTitle:obj[@"title"] ImageOrUrl:obj[@"image"] Click:^{
+            NSLog(@"%@",obj[@"title"]);
+            if (idx == 3) {
+                UIViewController *vc = [IEHelper findViewController];
+                IETextActionView *view = [[IETextActionView alloc]initWithFrame:vc.view.bounds];
+                view.delegate = vc;
+                [vc.view addSubview:view];
+                [view showTextView];
+                self.hidden = YES;
+            }
         }];
         
         view.frame = CGRectMake(width*idx, 0, width, 100);
@@ -36,7 +48,7 @@
     }];
 }
 
-- (UIView *)viewWithTitle:(NSString *)title ImageOrUrl:(NSString *)imageOrUrl Click:(void(^)())block{
+- (UIView *)viewWithTitle:(NSString *)title ImageOrUrl:(NSString *)imageOrUrl Click:(void(^)(void))block{
     UIView *view1 = [[UIView alloc] init];
     UILabel *lb1 = [self labelWithText:title];
     UIImageView *iv1 = [self imageViewWithName:imageOrUrl];
@@ -45,24 +57,20 @@
     
     view1.userInteractionEnabled = YES;
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
-    
-//    [[tap rac_gestureSignal] subscribeNext:^(id x) {
-//        block();
-//    }];
-    
-    [view1 addGestureRecognizer:tap];
-    
-//    [iv1 mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.centerX.mas_equalTo(view1);
-//        make.top.mas_equalTo(10);
-//        make.width.height.mas_equalTo(50);
-//    }];
-//
-//    [lb1 mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.right.mas_equalTo(0);
-//        make.top.mas_equalTo(iv1.mas_bottom).offset(10);
-//    }];
+    [view1 addGestureRecognizer:[UITapGestureRecognizer nvm_gestureRecognizerWithActionBlock:^{
+        block();
+    }]];
+
+    [iv1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(view1);
+        make.top.mas_equalTo(10);
+        make.width.height.mas_equalTo(50);
+    }];
+
+    [lb1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(0);
+        make.top.mas_equalTo(iv1.mas_bottom).offset(10);
+    }];
     
     return view1;
 }

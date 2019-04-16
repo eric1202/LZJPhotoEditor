@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "IEViewController.h"
-@interface ViewController ()<UIImagePickerControllerDelegate>
+@interface ViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *btn;
 

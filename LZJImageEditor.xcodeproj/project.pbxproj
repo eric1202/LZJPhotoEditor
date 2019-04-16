@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04C78233CC4FC8B40746929B /* libPods-LZJImageEditor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B98FD3F9CBE56993F508A3E5 /* libPods-LZJImageEditor.a */; };
 		B0F525392260926C00C7619B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F525382260926C00C7619B /* AppDelegate.m */; };
 		B0F5253C2260926C00C7619B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F5253B2260926C00C7619B /* ViewController.m */; };
 		B0F5253F2260926C00C7619B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0F5253D2260926C00C7619B /* Main.storyboard */; };
@@ -20,9 +21,22 @@
 		B0F5255D22609B9A00C7619B /* img.png in Resources */ = {isa = PBXBuildFile; fileRef = B0F5255922609B9A00C7619B /* img.png */; };
 		B0F5255E22609B9A00C7619B /* clip.png in Resources */ = {isa = PBXBuildFile; fileRef = B0F5255A22609B9A00C7619B /* clip.png */; };
 		B0F5255F22609B9A00C7619B /* text.png in Resources */ = {isa = PBXBuildFile; fileRef = B0F5255B22609B9A00C7619B /* text.png */; };
+		B0F5256222640FD000C7619B /* IEHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F5256122640FD000C7619B /* IEHelper.m */; };
+		B0FAAB99226431AA00C9D7C9 /* IEImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAAB98226431AA00C9D7C9 /* IEImageView.m */; };
+		B0FAAB9C226431EC00C9D7C9 /* IEStack.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAAB9B226431EC00C9D7C9 /* IEStack.m */; };
+		B0FAAB9F2264606D00C9D7C9 /* IEPinView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAAB9E2264606D00C9D7C9 /* IEPinView.m */; };
+		B0FAABA22264612800C9D7C9 /* IEActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAABA12264612800C9D7C9 /* IEActionSheetView.m */; };
+		B0FAABA52264741300C9D7C9 /* IEBaseCCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAABA42264741300C9D7C9 /* IEBaseCCollectionViewCell.m */; };
+		B0FAABA922648D3200C9D7C9 /* IEMasaicView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAABA822648D3200C9D7C9 /* IEMasaicView.m */; };
+		B0FAABAC22657A3C00C9D7C9 /* IEPinStickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAABAB22657A3C00C9D7C9 /* IEPinStickerView.m */; };
+		B0FAABAF22657A7300C9D7C9 /* IEStickerBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAABAD22657A7300C9D7C9 /* IEStickerBaseView.m */; };
+		B0FAABB222657CE600C9D7C9 /* IETextStickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAABB122657CE600C9D7C9 /* IETextStickerView.m */; };
+		B0FAABB5226585D200C9D7C9 /* IETextActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAABB4226585D200C9D7C9 /* IETextActionView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		202BA717616BD4E29D2EDB50 /* Pods-LZJImageEditor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LZJImageEditor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LZJImageEditor/Pods-LZJImageEditor.debug.xcconfig"; sourceTree = "<group>"; };
+		269FEFF567446D44D346D674 /* Pods-LZJImageEditor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LZJImageEditor.release.xcconfig"; path = "Pods/Target Support Files/Pods-LZJImageEditor/Pods-LZJImageEditor.release.xcconfig"; sourceTree = "<group>"; };
 		B0F525342260926C00C7619B /* LZJImageEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZJImageEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0F525372260926C00C7619B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B0F525382260926C00C7619B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -43,6 +57,29 @@
 		B0F5255922609B9A00C7619B /* img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img.png; sourceTree = "<group>"; };
 		B0F5255A22609B9A00C7619B /* clip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clip.png; sourceTree = "<group>"; };
 		B0F5255B22609B9A00C7619B /* text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text.png; sourceTree = "<group>"; };
+		B0F5256022640FD000C7619B /* IEHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IEHelper.h; sourceTree = "<group>"; };
+		B0F5256122640FD000C7619B /* IEHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEHelper.m; sourceTree = "<group>"; };
+		B0FAAB97226431AA00C9D7C9 /* IEImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IEImageView.h; sourceTree = "<group>"; };
+		B0FAAB98226431AA00C9D7C9 /* IEImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEImageView.m; sourceTree = "<group>"; };
+		B0FAAB9A226431EC00C9D7C9 /* IEStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IEStack.h; sourceTree = "<group>"; };
+		B0FAAB9B226431EC00C9D7C9 /* IEStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEStack.m; sourceTree = "<group>"; };
+		B0FAAB9D2264606D00C9D7C9 /* IEPinView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IEPinView.h; sourceTree = "<group>"; };
+		B0FAAB9E2264606D00C9D7C9 /* IEPinView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEPinView.m; sourceTree = "<group>"; };
+		B0FAABA02264612800C9D7C9 /* IEActionSheetView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IEActionSheetView.h; sourceTree = "<group>"; };
+		B0FAABA12264612800C9D7C9 /* IEActionSheetView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEActionSheetView.m; sourceTree = "<group>"; };
+		B0FAABA32264741300C9D7C9 /* IEBaseCCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IEBaseCCollectionViewCell.h; sourceTree = "<group>"; };
+		B0FAABA42264741300C9D7C9 /* IEBaseCCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEBaseCCollectionViewCell.m; sourceTree = "<group>"; };
+		B0FAABA722648D3200C9D7C9 /* IEMasaicView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IEMasaicView.h; sourceTree = "<group>"; };
+		B0FAABA822648D3200C9D7C9 /* IEMasaicView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEMasaicView.m; sourceTree = "<group>"; };
+		B0FAABAA22657A3C00C9D7C9 /* IEPinStickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEPinStickerView.h; sourceTree = "<group>"; };
+		B0FAABAB22657A3C00C9D7C9 /* IEPinStickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IEPinStickerView.m; sourceTree = "<group>"; };
+		B0FAABAD22657A7300C9D7C9 /* IEStickerBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IEStickerBaseView.m; sourceTree = "<group>"; };
+		B0FAABAE22657A7300C9D7C9 /* IEStickerBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEStickerBaseView.h; sourceTree = "<group>"; };
+		B0FAABB022657CE600C9D7C9 /* IETextStickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IETextStickerView.h; sourceTree = "<group>"; };
+		B0FAABB122657CE600C9D7C9 /* IETextStickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IETextStickerView.m; sourceTree = "<group>"; };
+		B0FAABB3226585D200C9D7C9 /* IETextActionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IETextActionView.h; sourceTree = "<group>"; };
+		B0FAABB4226585D200C9D7C9 /* IETextActionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IETextActionView.m; sourceTree = "<group>"; };
+		B98FD3F9CBE56993F508A3E5 /* libPods-LZJImageEditor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LZJImageEditor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,17 +87,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C78233CC4FC8B40746929B /* libPods-LZJImageEditor.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7192D52E9F68EBF2470F0AAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B98FD3F9CBE56993F508A3E5 /* libPods-LZJImageEditor.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B0F5252B2260926C00C7619B = {
 			isa = PBXGroup;
 			children = (
 				B0F525362260926C00C7619B /* LZJImageEditor */,
 				B0F525352260926C00C7619B /* Products */,
+				F2DE1B7F5A5C7A69E31728BF /* Pods */,
+				7192D52E9F68EBF2470F0AAB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +147,28 @@
 				B0F525522260949000C7619B /* IEToolBar.m */,
 				B0F52554226094B000C7619B /* IEManager.h */,
 				B0F52555226094B000C7619B /* IEManager.m */,
+				B0F5256022640FD000C7619B /* IEHelper.h */,
+				B0F5256122640FD000C7619B /* IEHelper.m */,
+				B0FAAB97226431AA00C9D7C9 /* IEImageView.h */,
+				B0FAAB98226431AA00C9D7C9 /* IEImageView.m */,
+				B0FAAB9A226431EC00C9D7C9 /* IEStack.h */,
+				B0FAAB9B226431EC00C9D7C9 /* IEStack.m */,
+				B0FAAB9D2264606D00C9D7C9 /* IEPinView.h */,
+				B0FAAB9E2264606D00C9D7C9 /* IEPinView.m */,
+				B0FAABA02264612800C9D7C9 /* IEActionSheetView.h */,
+				B0FAABA12264612800C9D7C9 /* IEActionSheetView.m */,
+				B0FAABA32264741300C9D7C9 /* IEBaseCCollectionViewCell.h */,
+				B0FAABA42264741300C9D7C9 /* IEBaseCCollectionViewCell.m */,
+				B0FAABA722648D3200C9D7C9 /* IEMasaicView.h */,
+				B0FAABA822648D3200C9D7C9 /* IEMasaicView.m */,
+				B0FAABAE22657A7300C9D7C9 /* IEStickerBaseView.h */,
+				B0FAABAD22657A7300C9D7C9 /* IEStickerBaseView.m */,
+				B0FAABAA22657A3C00C9D7C9 /* IEPinStickerView.h */,
+				B0FAABAB22657A3C00C9D7C9 /* IEPinStickerView.m */,
+				B0FAABB022657CE600C9D7C9 /* IETextStickerView.h */,
+				B0FAABB122657CE600C9D7C9 /* IETextStickerView.m */,
+				B0FAABB3226585D200C9D7C9 /* IETextActionView.h */,
+				B0FAABB4226585D200C9D7C9 /* IETextActionView.m */,
 			);
 			path = LZJPhotoEditor;
 			sourceTree = "<group>";
@@ -114,6 +184,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		F2DE1B7F5A5C7A69E31728BF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				202BA717616BD4E29D2EDB50 /* Pods-LZJImageEditor.debug.xcconfig */,
+				269FEFF567446D44D346D674 /* Pods-LZJImageEditor.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -121,6 +200,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0F5254A2260926E00C7619B /* Build configuration list for PBXNativeTarget "LZJImageEditor" */;
 			buildPhases = (
+				A78F7D287CE1B7CDC4EE3E44 /* [CP] Check Pods Manifest.lock */,
 				B0F525302260926C00C7619B /* Sources */,
 				B0F525312260926C00C7619B /* Frameworks */,
 				B0F525322260926C00C7619B /* Resources */,
@@ -183,16 +263,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A78F7D287CE1B7CDC4EE3E44 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LZJImageEditor-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B0F525302260926C00C7619B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0FAABAC22657A3C00C9D7C9 /* IEPinStickerView.m in Sources */,
+				B0FAABB222657CE600C9D7C9 /* IETextStickerView.m in Sources */,
 				B0F525532260949000C7619B /* IEToolBar.m in Sources */,
+				B0FAABAF22657A7300C9D7C9 /* IEStickerBaseView.m in Sources */,
+				B0FAABA52264741300C9D7C9 /* IEBaseCCollectionViewCell.m in Sources */,
 				B0F52556226094B000C7619B /* IEManager.m in Sources */,
+				B0F5256222640FD000C7619B /* IEHelper.m in Sources */,
 				B0F5253C2260926C00C7619B /* ViewController.m in Sources */,
+				B0FAABA22264612800C9D7C9 /* IEActionSheetView.m in Sources */,
+				B0FAAB9C226431EC00C9D7C9 /* IEStack.m in Sources */,
+				B0FAAB99226431AA00C9D7C9 /* IEImageView.m in Sources */,
+				B0FAABB5226585D200C9D7C9 /* IETextActionView.m in Sources */,
 				B0F525472260926E00C7619B /* main.m in Sources */,
 				B0F525502260947700C7619B /* IEViewController.m in Sources */,
+				B0FAAB9F2264606D00C9D7C9 /* IEPinView.m in Sources */,
+				B0FAABA922648D3200C9D7C9 /* IEMasaicView.m in Sources */,
 				B0F525392260926C00C7619B /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,6 +445,7 @@
 		};
 		B0F5254B2260926E00C7619B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 202BA717616BD4E29D2EDB50 /* Pods-LZJImageEditor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -350,6 +463,7 @@
 		};
 		B0F5254C2260926E00C7619B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 269FEFF567446D44D346D674 /* Pods-LZJImageEditor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

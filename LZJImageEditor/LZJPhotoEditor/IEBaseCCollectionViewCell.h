@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface IEBaseCCollectionViewCell : UICollectionViewCell
-
+@property (nonatomic, strong) UILabel *lbl;
+@property (nonatomic, strong) UIImageView *iv;
 @end
 
 NS_ASSUME_NONNULL_END

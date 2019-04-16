@@ -7,15 +7,18 @@
 //
 
 #import "IEPinView.h"
+#import "IEHelper.h"
+
+@interface IEPinView ()
+
+@end
 
 @implementation IEPinView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+-(IEPinView *)init{
+    self = [super init];
+    
+    return self;
 }
-*/
 
 @end
