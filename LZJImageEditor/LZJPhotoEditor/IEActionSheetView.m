@@ -73,7 +73,7 @@
         }];
         [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.mas_equalTo(0);
-            make.top.mas_equalTo(15);
+            make.top.mas_equalTo(6);
         }];
         
 

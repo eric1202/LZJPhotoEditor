@@ -42,6 +42,9 @@
     [picker dismissViewControllerAnimated:YES completion:^{
         IEViewController *vc = [[IEViewController alloc]init];
         vc.image = info[@"UIImagePickerControllerOriginalImage"];
+        [vc setCompleteBlock:^(UIImage * _Nonnull image) {
+            _imageView.image = image;
+        }];
         [self.navigationController pushViewController:vc animated:YES];
     }];
 }

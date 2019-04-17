@@ -18,12 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X7g-qW-kti">
-                                <rect key="frame" x="67" y="313" width="241" height="41"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X7g-qW-kti">
+                                <rect key="frame" x="2" y="148" width="371" height="371"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="X7g-qW-kti" secondAttribute="height" id="Vaq-mP-9hI"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u47-tK-QGJ">
-                                <rect key="frame" x="172" y="405" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u47-tK-QGJ">
+                                <rect key="frame" x="172" y="527" width="31" height="30"/>
                                 <state key="normal" title="add"/>
                                 <connections>
                                     <action selector="selectImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SnZ-gW-sVE"/>
@@ -34,10 +37,8 @@
                         <constraints>
                             <constraint firstItem="u47-tK-QGJ" firstAttribute="top" secondItem="X7g-qW-kti" secondAttribute="bottom" constant="8" symbolic="YES" id="0fd-MA-cCn"/>
                             <constraint firstItem="u47-tK-QGJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="172" id="JKt-Vz-ypW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="u47-tK-QGJ" secondAttribute="bottom" constant="232" id="KEu-ih-9u1"/>
-                            <constraint firstItem="X7g-qW-kti" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="249" id="Qaa-kS-YnC"/>
                             <constraint firstItem="X7g-qW-kti" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YBE-m8-Pgf"/>
-                            <constraint firstItem="X7g-qW-kti" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="dDj-Lq-iKm"/>
+                            <constraint firstItem="X7g-qW-kti" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="2" id="dDj-Lq-iKm"/>
                             <constraint firstItem="X7g-qW-kti" firstAttribute="centerX" secondItem="u47-tK-QGJ" secondAttribute="centerX" id="kPz-u2-pcg"/>
                             <constraint firstItem="X7g-qW-kti" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kWq-jM-3xp"/>
                         </constraints>

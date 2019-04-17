@@ -142,6 +142,7 @@
         
         //初始化顶层图片视图
         self.topImageView = [[UIImageView alloc] initWithFrame:self.bounds];
+        self.topImageView.contentMode = UIViewContentModeScaleAspectFit;
         [self addSubview:self.topImageView];
         
     }

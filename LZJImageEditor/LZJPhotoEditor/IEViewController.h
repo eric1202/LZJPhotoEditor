@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface IEViewController : UIViewController
 @property (nonatomic, strong) UIImage *image;
+
+@property (nonatomic, copy) void(^completeBlock)(UIImage *image);
 @end
 
 NS_ASSUME_NONNULL_END

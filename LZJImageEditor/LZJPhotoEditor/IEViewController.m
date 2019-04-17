@@ -15,13 +15,18 @@
 #import "IEPinActionSheetView.h"
 #import "IEEffectActionSheetView.h"
 #import "IEHelper.h"
+#import "IEMosaicView.h"
 #import "IEPinStickerView.h"
+
+#define NaviPosY 64
+#define BottomH 140
+#define ToolBarH 100
 @interface IEViewController ()<IeTextActionDelegate, IEActionSheetViewDelegate>
 @property (nonatomic, strong) IEImageView *originImageView;
 @property (nonatomic, strong) IEImageView *resultImageView;
 @property (nonatomic, strong) IEToolBar *toolBar;
 @property (nonatomic, strong) IEManager *imageEditManager;
-
+@property (nonatomic, strong) IEMosaicView *currentMosaicView;
 @property (nonatomic, strong) NSMutableArray *stickerViewArray;
 @property (nonatomic, assign) NSInteger stickerTag;
 @end
@@ -36,11 +41,21 @@
     
     [self.view addSubview:self.resultImageView];
     [self.view addSubview:self.toolBar];
-
+    
     self.originImageView.image = self.image;
     self.resultImageView.image = self.image;
     
+    CGFloat ScreenWidth = [[UIScreen mainScreen] bounds].size.width;
+    CGFloat ScreenHeight = [[UIScreen mainScreen] bounds].size.height;
+    CGFloat imageSizeWidth = self.image.size.width;
+    CGFloat imageSizeHeight = self.image.size.height;
+    CGFloat scale = ScreenWidth * imageSizeHeight / imageSizeWidth;
+    
+    self.resultImageView.frame = CGRectMake(0, NaviPosY, ScreenWidth, scale);
+    
     self.stickerViewArray = @[].mutableCopy;
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"保存" style:(UIBarButtonItemStyleDone) target:self action:@selector(save:)];
 }
 
 #pragma mark - Delegate
@@ -61,17 +76,40 @@
     else if([view isKindOfClass:IEEffectActionSheetView.class]){
         //begin mosaic
         NSLog(@"mosaic image begin");
+        if(index != 2){
+            
+            IEMosaicView *mv = [[IEMosaicView alloc]initWithFrame:self.resultImageView.bounds];
+            
+            mv.contentMode = UIViewContentModeScaleAspectFit;
+            mv.originalImage = _currentMosaicView?[_currentMosaicView render]:self.originImageView.image;
+            
+            [self.resultImageView addSubview:mv];
+            
+            if(_currentMosaicView){
+                [_currentMosaicView removeFromSuperview];
+                _currentMosaicView = nil;
+            }
+            _currentMosaicView = mv;
+            _currentMosaicView.mosaicImage = [IEMosaicView mosaicImage:self.resultImageView.image mosaicLevel:20*(index+1)];
+            //change brush style
+            
+        }
+        else{
+            if(_currentMosaicView && _currentMosaicView.canUndo){
+                [_currentMosaicView undo];
+            }
+        }
     }
-
+    
 }
 
 - (void)ieTextActionCloseBtnClicked{
     self.toolBar.hidden = NO;
-
+    
 }
 
 - (void)ieTextActionConfirmBtnClicked:(NSString *)text font:(UIFont *)font color:(UIColor *)color{
-
+    
     self.toolBar.hidden = NO;
     
     CGRect rect1 = [text boundingRectWithSize:CGSizeMake(340, MAXFLOAT)
@@ -102,13 +140,21 @@
 }
 #pragma mark - Custom Methods
 
+- (void)save:(id)sender{
+    if(_completeBlock){
+        _completeBlock([self.resultImageView outputImage]);
+    }
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 #pragma mark - Set & Get
 -(IEImageView *)resultImageView{
     if (!_resultImageView) {
-        _resultImageView = [[IEImageView alloc]initWithFrame:self.view.bounds];
+        
+        _resultImageView = [[IEImageView alloc]initWithFrame:CGRectZero];
         _resultImageView.contentMode = UIViewContentModeScaleAspectFit;
         _resultImageView.backgroundColor = UIColor.blackColor;
-        
+        _resultImageView.center = self.view.center;
         __weak IEViewController *weakSelf = self;
         [_resultImageView addGestureRecognizer:[UITapGestureRecognizer nvm_gestureRecognizerWithActionBlock:^{
             for (UIView *v in weakSelf.view.subviews) {
@@ -126,8 +172,9 @@
 
 -(IEImageView *)originImageView{
     if (!_originImageView) {
-        _originImageView = [[IEImageView alloc]initWithFrame:CGRectMake(0, 64, CGRectGetWidth(self.view.frame), CGRectGetWidth(self.view.frame))];
-        //        _resultImageView.contentMode = UIViewContentModeScaleAspectFit;
+        _originImageView = [[IEImageView alloc]initWithFrame:CGRectZero];
+        _originImageView.contentMode = UIViewContentModeScaleAspectFit;
+        _originImageView.center = self.view.center;
         _originImageView.backgroundColor = UIColor.blackColor;
     }
     
@@ -138,7 +185,7 @@
     if (!_toolBar) {
         _toolBar = [[IEToolBar alloc]initWithOptions:self.imageEditManager.options];
         
-        _toolBar.frame = CGRectMake(0, CGRectGetHeight(self.view.frame)-100, CGRectGetWidth(self.view.frame), 100);
+        _toolBar.frame = CGRectMake(0, CGRectGetHeight(self.view.frame)-ToolBarH, CGRectGetWidth(self.view.frame), ToolBarH);
         
     }
     
