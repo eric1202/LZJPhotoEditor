@@ -90,7 +90,8 @@
                 _currentMosaicView = nil;
             }
             _currentMosaicView = mv;
-            _currentMosaicView.mosaicImage = [IEMosaicView mosaicImage:self.resultImageView.image mosaicLevel:20*(index+1)];
+            BOOL isGuassianBlurMode = 1 == index;
+            _currentMosaicView.mosaicImage = isGuassianBlurMode?[IEMosaicView coreBlurImage:self.resultImageView.image withBlurNumber:10]:[IEMosaicView mosaicImage:self.resultImageView.image mosaicLevel:20] ;
             //change brush style
             
         }
@@ -216,6 +217,17 @@
     }
     
     return _imageEditManager;
+}
+
+- (void)updateImage:(UIImage *)image{
+    _image = image;
+    
+    self.originImageView.image = self.image;
+    self.resultImageView.image = self.image;
+}
+
+- (UIImage *)resultImage{
+    return _resultImageView.image;
 }
 #pragma mark - Notification
 

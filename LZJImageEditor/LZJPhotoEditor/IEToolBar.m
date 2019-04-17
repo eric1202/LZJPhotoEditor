@@ -8,11 +8,12 @@
 
 #import "IEToolBar.h"
 #import "IEHelper.h"
+#import "IEViewController.h"
 #import "IEPinActionSheetView.h"
 #import "IEEffectActionSheetView.h"
-
+#import "TOCropViewController/TOCropViewController.h"
 #import "IETextActionView.h"
-
+#import "TOCropViewController/Constants/TOCropViewConstants.h"
 @interface IEToolBar()
 @property (nonatomic, copy) NSArray *options;
 @end
@@ -32,7 +33,7 @@
 - (void)addBtns{
     CGFloat width = self.frame.size.width/self.options.count;
     [self.options enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        UIViewController *vc = [IEHelper findViewController];
+        IEViewController *vc = [IEHelper findViewController];
 
         UIView *view = [self viewWithTitle:obj[@"title"] ImageOrUrl:obj[@"image"] Click:^{
             NSLog(@"%@",obj[@"title"]);
@@ -65,6 +66,24 @@
                 
 
                 self.hidden = YES;
+                
+            }else if (idx == 1){
+
+                TOCropViewController *cropViewController = [[TOCropViewController alloc] initWithImage:vc.resultImage];
+                cropViewController.showActivitySheetOnDone = NO;
+                cropViewController.aspectRatioPickerButtonHidden = NO;
+                cropViewController.allowedAspectRatios = @[@(TOCropViewControllerAspectRatioPresetSquare),@(TOCropViewControllerAspectRatioPreset4x3)];
+                cropViewController.cropView.cropBoxResizeEnabled = NO;
+
+                [vc presentViewController:cropViewController animated:YES completion:nil];
+                
+                [cropViewController setOnDidCropToRect:^(UIImage * _Nonnull image, CGRect cropRect, NSInteger angle) {
+
+                    [cropViewController dismissViewControllerAnimated:NO completion:^{
+                        [vc updateImage:image];
+                        NSLog(@"setOnDidCropToRect ");
+                    }];
+                }];
                 
             }
             else if (idx == 2) {

@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 //Delegate
 @property (nonatomic, weak) id<IEMosaicViewDelegate> deleagate;
 
+@property (nonatomic, assign) BOOL isGuassianBlurMode;
+
 //Resetmasaic
 -(void)resetmasaicImage;
 
@@ -39,6 +41,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 生成马赛克元素图 **/
 +(UIImage *)mosaicImage:(UIImage *)sourceImage mosaicLevel:(NSUInteger)level;
+
+/** 生成模糊元素图 **/
++(UIImage *)coreBlurImage:(UIImage *)image withBlurNumber:(CGFloat)blur;
 
 //Render
 -(UIImage*)render;

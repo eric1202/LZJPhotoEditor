@@ -290,6 +290,8 @@
     UIImage *finalPath = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     UIGraphicsBeginImageContextWithOptions(size, YES, 1.0);
+    
+//    UIImage *renderImage = _isGuassianBlurMode?[self coreBlurImage:self.originalImage withBlurNumber:10]:self.mosaicImage;
     [self.mosaicImage drawInRect:CGRectMake(0, 0, size.width, size.height)];
     [finalPath drawInRect:CGRectMake(0, 0, size.width, size.height)];
     _mosaiFinalImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -303,6 +305,34 @@
         [self.deleagate mosaicView:self TouchesEnded:touches withEvent:event];
     }
 }
+
++ (UIImage *)coreBlurImage:(UIImage *)image withBlurNumber:(CGFloat)blur
+{
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CIImage *inputImage= [CIImage imageWithCGImage:image.CGImage];
+    //设置filter
+    CIFilter *filter = [CIFilter filterWithName:@"CIGaussianBlur"];
+    [filter setValue:inputImage forKey:kCIInputImageKey]; [filter setValue:@(blur) forKey: @"inputRadius"];
+    //模糊图片
+    CIImage *result=[filter valueForKey:kCIOutputImageKey];
+    CGImageRef outImage=[context createCGImage:result fromRect:[result extent]];
+    UIImage *blurImage=[UIImage imageWithCGImage:outImage];
+    CGImageRelease(outImage);
+    return blurImage;
+}
+
+//+ (UIImage *)filterForGaussianBlur:(UIImage*)image{
+
+//    GPUImageGaussianBlurFilter *filter = [[GPUImageGaussianBlurFilter alloc]init];
+//    [filter forceProcessingAtSize:image.size];
+//    filter.blurRadiusInPixels = 10.0;//这个越大，越模糊，模糊半径
+//
+//    GPUImagePicture *pic = [[GPUImagePicture alloc]initWithImage:image];
+//    [pic addTarget:filter];
+//    [pic processImage];
+//    [filter useNextFrameForImageCapture];
+//    return [filter imageFromCurrentFramebuffer];
+//}
 
 +(UIImage *)mosaicImage:(UIImage *)sourceImage mosaicLevel:(NSUInteger)level{
     
