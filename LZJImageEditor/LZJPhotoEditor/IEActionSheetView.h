@@ -35,7 +35,10 @@
  */
 @property(nonatomic,strong)NSString *title;
 
-
+/**
+ 每行元素
+ */
+@property (nonatomic, assign) NSInteger itemInlineCount;
 @end
 
 @protocol IEActionSheetViewDelegate <NSObject>

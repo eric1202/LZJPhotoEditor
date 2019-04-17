@@ -6,14 +6,14 @@
 //  Copyright © 2019年 weima. All rights reserved.
 //
 
-#import "IEPinView.h"
+#import "IEPinActionSheetView.h"
 #import "IEHelper.h"
 
-@interface IEPinView ()
+@interface IEPinActionSheetView ()
 //@property (nonatomic, strong) UICollectionView *collectionView;
 //@property (nonatomic, strong) UICollectionView *topView;
 @end
 
-@implementation IEPinView
+@implementation IEPinActionSheetView
 
 @end

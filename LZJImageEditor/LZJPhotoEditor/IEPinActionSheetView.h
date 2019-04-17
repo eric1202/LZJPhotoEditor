@@ -1,5 +1,5 @@
 //
-//  IEMasaicView.h
+//  IEPinView.h
 //  LZJImageEditor
 //
 //  Created by weima on 2019/4/15.
@@ -7,11 +7,14 @@
 //
 
 #import "IEActionSheetView.h"
-#import "IEImageView.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface IEMasaicView : IEActionSheetView
-@property (nonatomic, weak) IEImageView *originImageView;
+@interface IEPinActionSheetView : IEActionSheetView
+@property (nonatomic, strong) NSMutableArray *mapImageArr; // 贴图数据
+
+- (void)show;
+
 @end
 
 NS_ASSUME_NONNULL_END

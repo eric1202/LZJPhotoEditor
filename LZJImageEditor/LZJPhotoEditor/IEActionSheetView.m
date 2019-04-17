@@ -12,7 +12,15 @@
 #import "IEBaseCollectionViewCell.h"
 
 @implementation IEConfig
+- (instancetype)init{
+    self = [super init];
+    
+    self.circular = 10;
+    self.itemInlineCount = 4;
 
+    
+    return self;
+}
 @end
 
 
@@ -32,14 +40,21 @@
     if(self){
         UIView *v = [IEHelper findViewController].view;
         self.frame = CGRectMake(0, CGRectGetHeight(v.frame)*0.61, CGRectGetWidth(v.frame),CGRectGetHeight(v.frame));
-        config.circular = 8;
         self.config = config;
+        
+        //黑背景
+        UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
+        [self addSubview:effectView];
+        [effectView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(self);
+        }];
+        
         //设置圆角
         UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:CGSizeMake(config.circular, config.circular)];
         CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
         maskLayer.frame = self.bounds;
         maskLayer.path = maskPath.CGPath;
-        self.titleLabel.layer.mask = maskLayer;
+        self.layer.mask = maskLayer;
         [self addSubview:self.titleLabel];
         
         [self addSubview:self.collectionView];
@@ -60,6 +75,8 @@
             make.left.right.mas_equalTo(0);
             make.top.mas_equalTo(15);
         }];
+        
+
     }
     return self;
 }
@@ -67,7 +84,7 @@
 -(UICollectionView *)collectionView{
     if(!_collectionView){
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
-        CGFloat wd = CGRectGetWidth(self.frame)/4-3;
+        CGFloat wd = CGRectGetWidth(self.frame)/(self.config.itemInlineCount)-(self.config.itemInlineCount-1);
         
         layout.minimumInteritemSpacing = 1;
         
@@ -76,7 +93,7 @@
         
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
-        _collectionView.backgroundColor = UIColor.whiteColor;
+//        _collectionView.backgroundColor = UIColor.whiteColor;
         [_collectionView registerClass:[IEBaseCollectionViewCell class] forCellWithReuseIdentifier:@"IEBaseCCollectionViewCell"];
     }
     
@@ -89,8 +106,8 @@
         
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.text = @"操作";
-        _titleLabel.textColor = [UIColor grayColor];
-        _titleLabel.backgroundColor = UIColor.whiteColor;
+        _titleLabel.textColor = [UIColor whiteColor];
+//        _titleLabel.backgroundColor = UIColor.whiteColor;
         _titleLabel.font =[UIFont systemFontOfSize:14];
     }
     
@@ -149,8 +166,8 @@
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     IEBaseCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"IEBaseCCollectionViewCell" forIndexPath:indexPath];
-    [cell.lbl setText:[NSString stringWithFormat:@"%@",indexPath]];
-    cell.iv.image = [UIImage imageNamed:_datas[indexPath.item]];
+    [cell.lbl setText:_datas[indexPath.item][@"title"]];
+    cell.iv.image = [UIImage imageNamed:_datas[indexPath.item][@"image"]];
     return cell;
 }
 
@@ -160,12 +177,8 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if (_delegate) {
-        [_delegate didSelectAtIndex:indexPath.item ActionView:self Image:[UIImage imageNamed:_datas[indexPath.item]]];
+        [_delegate didSelectAtIndex:indexPath.item ActionView:self Image:[UIImage imageNamed:_datas[indexPath.item][@"image"]]];
     }
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    
 }
 
 @end

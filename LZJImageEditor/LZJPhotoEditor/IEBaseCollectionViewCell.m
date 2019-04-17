@@ -33,7 +33,8 @@
 - (UILabel *)lbl{
     if(!_lbl){
         _lbl = [[UILabel alloc]init];
-        _lbl.textColor = UIColor.blackColor;
+        _lbl.textColor = UIColor.lightGrayColor;
+        _lbl.textAlignment = NSTextAlignmentCenter;
     }
     return _lbl;
 }
@@ -42,6 +43,7 @@
     if (!_iv) {
         _iv = [[UIImageView alloc]init];
         _iv.image = [UIImage imageNamed:@"ma"];
+        _iv.backgroundColor = UIColor.lightGrayColor;
     }
     return _iv;
 }

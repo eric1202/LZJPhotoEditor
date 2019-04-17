@@ -12,7 +12,8 @@
 #import "IEImageView.h"
 #import "IETextStickerView.h"
 #import "IETextActionView.h"
-#import "IEPinView.h"
+#import "IEPinActionSheetView.h"
+#import "IEEffectActionSheetView.h"
 #import "IEHelper.h"
 #import "IEPinStickerView.h"
 @interface IEViewController ()<IeTextActionDelegate, IEActionSheetViewDelegate>
@@ -45,16 +46,22 @@
 #pragma mark - Delegate
 
 - (void)didSelectAtIndex:(NSInteger)index ActionView:(IEActionSheetView *)view Image:(UIImage *)image{
-    IEPinStickerView *stickerImageView = [[IEPinStickerView alloc]init];
-    
-    stickerImageView.delegate = self;
-    stickerImageView.tag = self.stickerTag ++;
-    stickerImageView.frame = CGRectMake(0, 0, 128, 128);
-    stickerImageView.center = self.resultImageView.center;
-    stickerImageView.contentImageView.image = image;
-    [self.resultImageView addSubview:stickerImageView];
-    
-    [self.stickerViewArray insertObject:stickerImageView atIndex:0];
+    if([view isKindOfClass:IEPinActionSheetView.class]){
+        IEPinStickerView *stickerImageView = [[IEPinStickerView alloc]init];
+        
+        stickerImageView.delegate = self;
+        stickerImageView.tag = self.stickerTag ++;
+        stickerImageView.frame = CGRectMake(0, 0, 128, 128);
+        stickerImageView.center = self.resultImageView.center;
+        stickerImageView.contentImageView.image = image;
+        [self.resultImageView addSubview:stickerImageView];
+        
+        [self.stickerViewArray insertObject:stickerImageView atIndex:0];
+    }
+    else if([view isKindOfClass:IEEffectActionSheetView.class]){
+        //begin mosaic
+        NSLog(@"mosaic image begin");
+    }
 
 }
 
@@ -105,7 +112,7 @@
         __weak IEViewController *weakSelf = self;
         [_resultImageView addGestureRecognizer:[UITapGestureRecognizer nvm_gestureRecognizerWithActionBlock:^{
             for (UIView *v in weakSelf.view.subviews) {
-                if ([v isKindOfClass:IEPinView.class] || [v isKindOfClass:IETextActionView.class]) {
+                if ([v isKindOfClass:IEActionSheetView.class] || [v isKindOfClass:IETextActionView.class]) {
                     [v removeFromSuperview];
                 }
                 

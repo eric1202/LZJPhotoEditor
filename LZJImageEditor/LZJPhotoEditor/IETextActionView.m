@@ -151,6 +151,9 @@
             btn.tag = idx +1000;
             [btn addTarget:self action:@selector(changeColor:) forControlEvents:(UIControlEventTouchUpInside)];
             [btn setBackgroundColor:color];
+            
+            btn.layer.borderColor = UIColor.whiteColor.CGColor;
+            btn.layer.borderWidth = 4;
             btn.layer.cornerRadius = 15;
             [_bottomView addSubview:btn];
         }];

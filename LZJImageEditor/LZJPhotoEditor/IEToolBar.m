@@ -8,7 +8,9 @@
 
 #import "IEToolBar.h"
 #import "IEHelper.h"
-#import "IEPinView.h"
+#import "IEPinActionSheetView.h"
+#import "IEEffectActionSheetView.h"
+
 #import "IETextActionView.h"
 
 @interface IEToolBar()
@@ -37,9 +39,9 @@
             if(idx == 0){
                 IEConfig *config = [[IEConfig alloc]init];
                 config.title = @"贴图";
-                config.datas = @[@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma",@"ma"];
+                config.datas = @[@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"},@{@"image":@"ma",@"title":@"贴图"}];
                 
-                IEPinView *view = [[IEPinView alloc]initWithConfig:config];
+                IEPinActionSheetView *view = [[IEPinActionSheetView alloc]initWithConfig:config];
                 view.delegate = vc;
                 [vc.view addSubview:view];
                 
@@ -56,7 +58,7 @@
 //                        [view mas_updateConstraints:^(MASConstraintMaker *make) {
 //                            make.height.mas_equalTo(CGRectGetHeight(vc.view.frame)*0.38);
 //                        }];
-//                        
+//
 //                        [vc.view layoutIfNeeded];
 //                    }];
 //                });
@@ -64,6 +66,21 @@
 
                 self.hidden = YES;
                 
+            }
+            else if (idx == 2) {
+                IEConfig *config = [[IEConfig alloc]init];
+                config.title = @"马赛克";
+                config.datas = @[@{@"image":@"mosaic",@"title":@"马赛克"},@{@"image":@"gaosi",@"title":@"模糊"},@{@"image":@"redo",@"title":@"还原"}];
+                config.itemInlineCount = 3;
+                
+                IEEffectActionSheetView *view = [[IEEffectActionSheetView alloc]initWithConfig:config];
+                view.delegate = vc;
+                [vc.view addSubview:view];
+                
+                [view mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.left.bottom.right.mas_equalTo(0);
+                    make.height.mas_equalTo(140);
+                }];
             }
             else if (idx == 3) {
                 IETextActionView *view = [[IETextActionView alloc]initWithFrame:vc.view.bounds];

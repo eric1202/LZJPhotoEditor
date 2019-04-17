@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		04C78233CC4FC8B40746929B /* libPods-LZJImageEditor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B98FD3F9CBE56993F508A3E5 /* libPods-LZJImageEditor.a */; };
+		B05470582266BE4A00DF9211 /* MosaiPath.m in Sources */ = {isa = PBXBuildFile; fileRef = B05470552266BE4A00DF9211 /* MosaiPath.m */; };
+		B05470592266BE4A00DF9211 /* MosaiView.m in Sources */ = {isa = PBXBuildFile; fileRef = B05470562266BE4A00DF9211 /* MosaiView.m */; };
+		B054705A2266BE4A00DF9211 /* MosaiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B05470572266BE4A00DF9211 /* MosaiManager.m */; };
+		B054705D2266CA2200DF9211 /* IEEffectActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = B054705C2266CA2200DF9211 /* IEEffectActionSheetView.m */; };
+		B05470602266CDBC00DF9211 /* mosaic.png in Resources */ = {isa = PBXBuildFile; fileRef = B054705E2266CDBC00DF9211 /* mosaic.png */; };
+		B05470612266CDBC00DF9211 /* gaosi.png in Resources */ = {isa = PBXBuildFile; fileRef = B054705F2266CDBC00DF9211 /* gaosi.png */; };
+		B05470632266CDE500DF9211 /* redo.png in Resources */ = {isa = PBXBuildFile; fileRef = B05470622266CDE500DF9211 /* redo.png */; };
 		B0F525392260926C00C7619B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F525382260926C00C7619B /* AppDelegate.m */; };
 		B0F5253C2260926C00C7619B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F5253B2260926C00C7619B /* ViewController.m */; };
 		B0F5253F2260926C00C7619B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0F5253D2260926C00C7619B /* Main.storyboard */; };
@@ -24,10 +31,10 @@
 		B0F5256222640FD000C7619B /* IEHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F5256122640FD000C7619B /* IEHelper.m */; };
 		B0FAAB99226431AA00C9D7C9 /* IEImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAAB98226431AA00C9D7C9 /* IEImageView.m */; };
 		B0FAAB9C226431EC00C9D7C9 /* IEStack.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAAB9B226431EC00C9D7C9 /* IEStack.m */; };
-		B0FAAB9F2264606D00C9D7C9 /* IEPinView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAAB9E2264606D00C9D7C9 /* IEPinView.m */; };
+		B0FAAB9F2264606D00C9D7C9 /* IEPinActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAAB9E2264606D00C9D7C9 /* IEPinActionSheetView.m */; };
 		B0FAABA22264612800C9D7C9 /* IEActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAABA12264612800C9D7C9 /* IEActionSheetView.m */; };
 		B0FAABA52264741300C9D7C9 /* IEBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAABA42264741300C9D7C9 /* IEBaseCollectionViewCell.m */; };
-		B0FAABA922648D3200C9D7C9 /* IEMasaicView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAABA822648D3200C9D7C9 /* IEMasaicView.m */; };
+		B0FAABA922648D3200C9D7C9 /* IEMosaicView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAABA822648D3200C9D7C9 /* IEMosaicView.m */; };
 		B0FAABAC22657A3C00C9D7C9 /* IEPinStickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAABAB22657A3C00C9D7C9 /* IEPinStickerView.m */; };
 		B0FAABAF22657A7300C9D7C9 /* IEStickerBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAABAD22657A7300C9D7C9 /* IEStickerBaseView.m */; };
 		B0FAABB222657CE600C9D7C9 /* IETextStickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FAABB122657CE600C9D7C9 /* IETextStickerView.m */; };
@@ -37,6 +44,17 @@
 /* Begin PBXFileReference section */
 		202BA717616BD4E29D2EDB50 /* Pods-LZJImageEditor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LZJImageEditor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LZJImageEditor/Pods-LZJImageEditor.debug.xcconfig"; sourceTree = "<group>"; };
 		269FEFF567446D44D346D674 /* Pods-LZJImageEditor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LZJImageEditor.release.xcconfig"; path = "Pods/Target Support Files/Pods-LZJImageEditor/Pods-LZJImageEditor.release.xcconfig"; sourceTree = "<group>"; };
+		B05470522266BE4A00DF9211 /* MosaiPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MosaiPath.h; sourceTree = "<group>"; };
+		B05470532266BE4A00DF9211 /* MosaiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MosaiManager.h; sourceTree = "<group>"; };
+		B05470542266BE4A00DF9211 /* MosaiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MosaiView.h; sourceTree = "<group>"; };
+		B05470552266BE4A00DF9211 /* MosaiPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MosaiPath.m; sourceTree = "<group>"; };
+		B05470562266BE4A00DF9211 /* MosaiView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MosaiView.m; sourceTree = "<group>"; };
+		B05470572266BE4A00DF9211 /* MosaiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MosaiManager.m; sourceTree = "<group>"; };
+		B054705B2266CA2200DF9211 /* IEEffectActionSheetView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IEEffectActionSheetView.h; sourceTree = "<group>"; };
+		B054705C2266CA2200DF9211 /* IEEffectActionSheetView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEEffectActionSheetView.m; sourceTree = "<group>"; };
+		B054705E2266CDBC00DF9211 /* mosaic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mosaic.png; sourceTree = "<group>"; };
+		B054705F2266CDBC00DF9211 /* gaosi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gaosi.png; sourceTree = "<group>"; };
+		B05470622266CDE500DF9211 /* redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redo.png; sourceTree = "<group>"; };
 		B0F525342260926C00C7619B /* LZJImageEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZJImageEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0F525372260926C00C7619B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B0F525382260926C00C7619B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -63,14 +81,14 @@
 		B0FAAB98226431AA00C9D7C9 /* IEImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEImageView.m; sourceTree = "<group>"; };
 		B0FAAB9A226431EC00C9D7C9 /* IEStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IEStack.h; sourceTree = "<group>"; };
 		B0FAAB9B226431EC00C9D7C9 /* IEStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEStack.m; sourceTree = "<group>"; };
-		B0FAAB9D2264606D00C9D7C9 /* IEPinView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IEPinView.h; sourceTree = "<group>"; };
-		B0FAAB9E2264606D00C9D7C9 /* IEPinView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEPinView.m; sourceTree = "<group>"; };
+		B0FAAB9D2264606D00C9D7C9 /* IEPinActionSheetView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IEPinActionSheetView.h; sourceTree = "<group>"; };
+		B0FAAB9E2264606D00C9D7C9 /* IEPinActionSheetView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEPinActionSheetView.m; sourceTree = "<group>"; };
 		B0FAABA02264612800C9D7C9 /* IEActionSheetView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IEActionSheetView.h; sourceTree = "<group>"; };
 		B0FAABA12264612800C9D7C9 /* IEActionSheetView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEActionSheetView.m; sourceTree = "<group>"; };
 		B0FAABA32264741300C9D7C9 /* IEBaseCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IEBaseCollectionViewCell.h; sourceTree = "<group>"; };
 		B0FAABA42264741300C9D7C9 /* IEBaseCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEBaseCollectionViewCell.m; sourceTree = "<group>"; };
-		B0FAABA722648D3200C9D7C9 /* IEMasaicView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IEMasaicView.h; sourceTree = "<group>"; };
-		B0FAABA822648D3200C9D7C9 /* IEMasaicView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEMasaicView.m; sourceTree = "<group>"; };
+		B0FAABA722648D3200C9D7C9 /* IEMosaicView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IEMosaicView.h; sourceTree = "<group>"; };
+		B0FAABA822648D3200C9D7C9 /* IEMosaicView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEMosaicView.m; sourceTree = "<group>"; };
 		B0FAABAA22657A3C00C9D7C9 /* IEPinStickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEPinStickerView.h; sourceTree = "<group>"; };
 		B0FAABAB22657A3C00C9D7C9 /* IEPinStickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IEPinStickerView.m; sourceTree = "<group>"; };
 		B0FAABAD22657A7300C9D7C9 /* IEStickerBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IEStickerBaseView.m; sourceTree = "<group>"; };
@@ -100,6 +118,19 @@
 				B98FD3F9CBE56993F508A3E5 /* libPods-LZJImageEditor.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B05470512266BE4A00DF9211 /* MosaiView */ = {
+			isa = PBXGroup;
+			children = (
+				B05470522266BE4A00DF9211 /* MosaiPath.h */,
+				B05470532266BE4A00DF9211 /* MosaiManager.h */,
+				B05470542266BE4A00DF9211 /* MosaiView.h */,
+				B05470552266BE4A00DF9211 /* MosaiPath.m */,
+				B05470562266BE4A00DF9211 /* MosaiView.m */,
+				B05470572266BE4A00DF9211 /* MosaiManager.m */,
+			);
+			path = MosaiView;
 			sourceTree = "<group>";
 		};
 		B0F5252B2260926C00C7619B = {
@@ -141,6 +172,7 @@
 		B0F5254D2260945700C7619B /* LZJPhotoEditor */ = {
 			isa = PBXGroup;
 			children = (
+				B05470512266BE4A00DF9211 /* MosaiView */,
 				B0F5254E2260947700C7619B /* IEViewController.h */,
 				B0F5254F2260947700C7619B /* IEViewController.m */,
 				B0F525512260949000C7619B /* IEToolBar.h */,
@@ -153,14 +185,14 @@
 				B0FAAB98226431AA00C9D7C9 /* IEImageView.m */,
 				B0FAAB9A226431EC00C9D7C9 /* IEStack.h */,
 				B0FAAB9B226431EC00C9D7C9 /* IEStack.m */,
-				B0FAAB9D2264606D00C9D7C9 /* IEPinView.h */,
-				B0FAAB9E2264606D00C9D7C9 /* IEPinView.m */,
+				B0FAAB9D2264606D00C9D7C9 /* IEPinActionSheetView.h */,
+				B0FAAB9E2264606D00C9D7C9 /* IEPinActionSheetView.m */,
 				B0FAABA02264612800C9D7C9 /* IEActionSheetView.h */,
 				B0FAABA12264612800C9D7C9 /* IEActionSheetView.m */,
 				B0FAABA32264741300C9D7C9 /* IEBaseCollectionViewCell.h */,
 				B0FAABA42264741300C9D7C9 /* IEBaseCollectionViewCell.m */,
-				B0FAABA722648D3200C9D7C9 /* IEMasaicView.h */,
-				B0FAABA822648D3200C9D7C9 /* IEMasaicView.m */,
+				B0FAABA722648D3200C9D7C9 /* IEMosaicView.h */,
+				B0FAABA822648D3200C9D7C9 /* IEMosaicView.m */,
 				B0FAABAE22657A7300C9D7C9 /* IEStickerBaseView.h */,
 				B0FAABAD22657A7300C9D7C9 /* IEStickerBaseView.m */,
 				B0FAABAA22657A3C00C9D7C9 /* IEPinStickerView.h */,
@@ -169,6 +201,8 @@
 				B0FAABB122657CE600C9D7C9 /* IETextStickerView.m */,
 				B0FAABB3226585D200C9D7C9 /* IETextActionView.h */,
 				B0FAABB4226585D200C9D7C9 /* IETextActionView.m */,
+				B054705B2266CA2200DF9211 /* IEEffectActionSheetView.h */,
+				B054705C2266CA2200DF9211 /* IEEffectActionSheetView.m */,
 			);
 			path = LZJPhotoEditor;
 			sourceTree = "<group>";
@@ -176,6 +210,9 @@
 		B0F5255722609B9A00C7619B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B05470622266CDE500DF9211 /* redo.png */,
+				B054705F2266CDBC00DF9211 /* gaosi.png */,
+				B054705E2266CDBC00DF9211 /* mosaic.png */,
 				B0F5255822609B9A00C7619B /* ma.png */,
 				B0F5255922609B9A00C7619B /* img.png */,
 				B0F5255A22609B9A00C7619B /* clip.png */,
@@ -252,6 +289,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0F5255D22609B9A00C7619B /* img.png in Resources */,
+				B05470632266CDE500DF9211 /* redo.png in Resources */,
+				B05470612266CDBC00DF9211 /* gaosi.png in Resources */,
+				B05470602266CDBC00DF9211 /* mosaic.png in Resources */,
 				B0F525442260926D00C7619B /* LaunchScreen.storyboard in Resources */,
 				B0F525412260926D00C7619B /* Assets.xcassets in Resources */,
 				B0F5253F2260926C00C7619B /* Main.storyboard in Resources */,
@@ -290,7 +330,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0FAABAC22657A3C00C9D7C9 /* IEPinStickerView.m in Sources */,
+				B054705A2266BE4A00DF9211 /* MosaiManager.m in Sources */,
 				B0FAABB222657CE600C9D7C9 /* IETextStickerView.m in Sources */,
+				B054705D2266CA2200DF9211 /* IEEffectActionSheetView.m in Sources */,
+				B05470582266BE4A00DF9211 /* MosaiPath.m in Sources */,
 				B0F525532260949000C7619B /* IEToolBar.m in Sources */,
 				B0FAABAF22657A7300C9D7C9 /* IEStickerBaseView.m in Sources */,
 				B0FAABA52264741300C9D7C9 /* IEBaseCollectionViewCell.m in Sources */,
@@ -302,9 +345,10 @@
 				B0FAAB99226431AA00C9D7C9 /* IEImageView.m in Sources */,
 				B0FAABB5226585D200C9D7C9 /* IETextActionView.m in Sources */,
 				B0F525472260926E00C7619B /* main.m in Sources */,
+				B05470592266BE4A00DF9211 /* MosaiView.m in Sources */,
 				B0F525502260947700C7619B /* IEViewController.m in Sources */,
-				B0FAAB9F2264606D00C9D7C9 /* IEPinView.m in Sources */,
-				B0FAABA922648D3200C9D7C9 /* IEMasaicView.m in Sources */,
+				B0FAAB9F2264606D00C9D7C9 /* IEPinActionSheetView.m in Sources */,
+				B0FAABA922648D3200C9D7C9 /* IEMosaicView.m in Sources */,
 				B0F525392260926C00C7619B /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
