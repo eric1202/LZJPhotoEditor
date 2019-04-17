@@ -37,7 +37,7 @@
     [super viewDidLoad];
     
     self.title = @"编辑图片";
-    self.view.backgroundColor = UIColor.whiteColor;
+    self.view.backgroundColor = UIColor.blackColor;
     
     [self.view addSubview:self.resultImageView];
     [self.view addSubview:self.toolBar];
@@ -51,7 +51,7 @@
     CGFloat imageSizeHeight = self.image.size.height;
     CGFloat scale = ScreenWidth * imageSizeHeight / imageSizeWidth;
     
-    self.resultImageView.frame = CGRectMake(0, NaviPosY, ScreenWidth, scale);
+    self.resultImageView.frame = CGRectMake(0, (ScreenHeight-NaviPosY-scale)/2, ScreenWidth, scale);
     
     self.stickerViewArray = @[].mutableCopy;
     
@@ -67,7 +67,7 @@
         stickerImageView.delegate = self;
         stickerImageView.tag = self.stickerTag ++;
         stickerImageView.frame = CGRectMake(0, 0, 128, 128);
-        stickerImageView.center = self.resultImageView.center;
+        stickerImageView.center = CGPointMake(self.resultImageView.center.x, self.resultImageView.frame.size.height/2);
         stickerImageView.contentImageView.image = image;
         [self.resultImageView addSubview:stickerImageView];
         
@@ -129,7 +129,7 @@
     textStickerView.delegate = self;
     textStickerView.tag = self.stickerTag++;
     textStickerView.frame = CGRectMake(0, 0, rect2.size.width + 44, rect1.size.height + 34);
-    textStickerView.center = CGPointMake(self.view.frame.size.width/2, 180);
+    textStickerView.center = CGPointMake(self.resultImageView.center.x, self.resultImageView.frame.size.height/2);
     textStickerView.contentLabel.text = text;
     textStickerView.contentLabel.font = font;
     textStickerView.contentLabel.textColor = color;
@@ -139,6 +139,24 @@
     [self.stickerViewArray insertObject:textStickerView atIndex:0];
 }
 #pragma mark - Custom Methods
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    CGPoint point = [[touches anyObject] locationInView:self.resultImageView];
+    BOOL selected = NO;
+    
+    for (UIView *obj in self.stickerViewArray) {
+        if ([obj isKindOfClass:[IEStickerBaseView class]]) {
+            IEStickerBaseView *view = (IEStickerBaseView *)obj;
+            if (CGRectContainsPoint(view.frame, point) && !selected) {
+                view.isSelected = YES;
+                selected = YES;
+            }else{
+                view.isSelected = NO;
+            }
+        }
+    }
+}
 
 - (void)save:(id)sender{
     if(_completeBlock){
